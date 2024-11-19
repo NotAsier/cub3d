@@ -6,14 +6,14 @@
 #    By: aarranz- <aarranz-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/09 11:33:45 by aarranz-          #+#    #+#              #
-#    Updated: 2024/05/02 11:20:37 by aarranz-         ###   ########.fr        #
+#    Updated: 2024/11/19 14:01:05 by aarranz-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:=	cub3d
 SRC_PATH	:=	src
 OBJ_DIR		:=	obj
-SOURCES		:=	so_long.c map_checker.c map_checker2.c free_leaks.c
+SOURCES		:=	main.c map_checker.c map_checker2.c free_leaks.c
 OBJS		:=	$(SOURCES:%.c=$(OBJ_DIR)/%.o)
 CC			:=	gcc
 CFLAGS		:=	-Wall -Wextra -Werror -I./include -g3 #-fsanitize=address

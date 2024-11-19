@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aarranz- <aarranz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 12:30:41 by aarranz-          #+#    #+#             */
-/*   Updated: 2024/05/02 14:15:07 by aarranz-         ###   ########.fr       */
+/*   Updated: 2024/11/19 14:39:25 by aarranz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,26 +59,15 @@ void	error(char *message, t_params *params)
 
 void	parse_map(t_params *params)
 {
-	int i = 0;
-
 	cub_check(params);
 	check_fd(params);
 	dump_raw(params);
 	dump_info(params);
+	dump_info2(params);
+	
+	
 	player_position(params);
-	while(params->raw[i])
-	{
-		printf("%s", params->raw[i]);
-		i++;
-	}
-	printf("\n%c", params->player_pos);
-	printf("\n%i", params->player_x);
-	printf("\n%i", params->player_y);
-	printf("\n%s", params->NO);
-	/*printf("\n%s", params->SO);
-	printf("\n%s", params->EA);
-	printf("\n%s", params->WE);*/
-		
+	print_info(params);
 		
 	/*
 	check_char_map(params);
