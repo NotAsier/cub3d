@@ -6,7 +6,7 @@
 /*   By: aarranz- <aarranz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 12:33:33 by aarranz-          #+#    #+#             */
-/*   Updated: 2024/05/02 13:52:56 by aarranz-         ###   ########.fr       */
+/*   Updated: 2024/11/19 14:39:44 by aarranz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ void	dump_raw(t_params *params);
 void	cub_check(t_params *params);
 void	player_position(t_params *params);
 void	dump_info(t_params *params);
+void	dump_info2(t_params *params);
+char 	*take_path(char *str,int nbr);
 /*void	map_walls(t_params *params);
 void	check_char_map(t_params *params);
 void	count_lines_len_map(t_params *params);
@@ -64,5 +66,9 @@ void	dump_filled_map(t_params *params);*/
 //------------------------------------------------------------------------------
 void	free_map(t_params *params);
 int		red_cross(t_params *params);
+//------------------------------------------------------------------------------
+//			PRINT INFO
+//------------------------------------------------------------------------------
+void	print_info(t_params *params);
 
 #endif // CUB3D_H
