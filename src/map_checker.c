@@ -6,36 +6,11 @@
 /*   By: aarranz- <aarranz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 13:12:10 by aarranz-          #+#    #+#             */
-/*   Updated: 2024/05/02 11:19:11 by aarranz-         ###   ########.fr       */
+/*   Updated: 2024/11/25 12:15:04 by aarranz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-void	map_walls(t_params *params)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	params->map_len = ft_strlen(params->map[i]) - 2;
-	if (params->map_len < 1)
-		error("invalid map", params);
-	while (params->map[i])
-	{
-		if (params->map[i][0] != '1'
-		|| params->map[i][params->map_len] != '1')
-			error("map side walls not valid", params);
-		i++;
-		while (j < params->map_len)
-		{
-			if (params->map[0][j] != '1'
-			|| params->map[params->map_heigth - 1][j] != '1')
-				error("map top or floor walls not valid", params);
-			j++;
-		}
-	}
-}
 
 void	dump_raw(t_params *params)
 {
