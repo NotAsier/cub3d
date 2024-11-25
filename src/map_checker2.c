@@ -6,7 +6,7 @@
 /*   By: aarranz- <aarranz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 10:55:57 by aarranz-          #+#    #+#             */
-/*   Updated: 2024/11/19 14:42:58 by aarranz-         ###   ########.fr       */
+/*   Updated: 2024/11/25 13:50:06 by aarranz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ void	print_info(t_params *params)
 	printf("\n%s", params->WE);
 	printf("\n%s", params->F);
 	printf("\n%s", params->C);
+	i = 0;
+	while(params->raw[i])
+	{
+		printf("%s", params->map[i]);
+		i++;
+	}
 }
 
 
@@ -53,6 +59,33 @@ void	print_info(t_params *params)
 	}
 		//error("raw char counter not valid", params);
 }*/
+
+void	dump_map(t_params *params)
+{
+	size_t	i;
+	size_t	j;
+	size_t	info_line;
+
+	info_line = 0;
+	i = -1;
+	while ((++i >= params->raw_heigth) || (info_line < 6))
+	{
+		j = -1;
+		while (params->raw[i][++j] != '\0')
+		{
+			if ((params->raw[i][j] == 'N' && params->raw[i][j+1] == 'O'
+			&& params->raw[i][j+2] == ' ') || (params->raw[i][j] == 'S'
+			&& params->raw[i][j+1] == 'O' && params->raw[i][j+2] == ' ') 
+			|| (params->raw[i][j] == 'E' && params->raw[i][j+1] == 'A'
+			&& params->raw[i][j+2] == ' ') || (params->raw[i][j] == 'W' 
+			&& params->raw[i][j+1] == 'E' && params->raw[i][j+2] == ' ')
+			|| (params->raw[i][j] == 'C' && params->raw[i][j+1] == ' ')
+			|| (params->raw[i][j] == 'F' && params->raw[i][j+1] == ' '))
+				info_line++;					
+		}
+	}
+	dump_map2(params, i);
+}
 
 
 char *take_path(char *str, int nbr)

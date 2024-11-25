@@ -6,7 +6,7 @@
 /*   By: aarranz- <aarranz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 12:30:41 by aarranz-          #+#    #+#             */
-/*   Updated: 2024/11/19 14:39:25 by aarranz-         ###   ########.fr       */
+/*   Updated: 2024/11/25 12:12:17 by aarranz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	init(t_params *params)
 {
 	params->fd = 0;
 	params->raw = NULL;
+	params->raw = 0;
 	params->raw_heigth = 0;
 	params->player_x = 0;
 	params->player_y = 0;
