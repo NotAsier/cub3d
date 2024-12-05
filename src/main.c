@@ -6,7 +6,7 @@
 /*   By: aarranz- <aarranz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 12:30:41 by aarranz-          #+#    #+#             */
-/*   Updated: 2024/11/25 12:12:17 by aarranz-         ###   ########.fr       */
+/*   Updated: 2024/12/05 12:54:28 by aarranz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ void	parse_map(t_params *params)
 	dump_raw(params);
 	dump_info(params);
 	dump_info2(params);
+	dump_map(params);
+	check_char_map(params);
 	
 	
 	player_position(params);

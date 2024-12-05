@@ -6,7 +6,7 @@
 /*   By: aarranz- <aarranz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 13:12:10 by aarranz-          #+#    #+#             */
-/*   Updated: 2024/11/25 12:15:04 by aarranz-         ###   ########.fr       */
+/*   Updated: 2024/12/05 12:51:03 by aarranz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,25 +54,27 @@ void	cub_check(t_params *params)
 
 void	check_char_map(t_params *params)
 {
-	int	row;
-	int	col;
+	int	i;
+	int	j;
 
-	row = 0;
-	while (row < params->map_heigth)
+	i = 0;
+	while (params->map[i])
 	{
-		col = 0;
-		while (params->map[row][col])
+		j = 0;
+		while (params->map[i][j])
 		{
-			if (params->map[row][col] != '1'
-			&& params->map[row][col] != '0'
-			&& params->map[row][col] != 'P'
-			&& params->map[row][col] != 'C'
-			&& params->map[row][col] != 'E'
-			&& params->map[row][col] != '\n')
+			if (params->map[i][j] != '1'
+			&& params->map[i][j] != '0'
+			&& params->map[i][j] != 'N'
+			&& params->map[i][j] != 'W'
+			&& params->map[i][j] != 'S'
+			&& params->map[i][j] != 'E'
+			&& params->map[i][j] != ' '
+			&& params->map[i][j] != '\n')
 				error("characters in map are invalid", params);
-			col++;
+			j++;
 		}
-		row++;
+		i++;
 	}
 }
 
