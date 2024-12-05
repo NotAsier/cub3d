@@ -6,7 +6,7 @@
 /*   By: aarranz- <aarranz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 12:33:33 by aarranz-          #+#    #+#             */
-/*   Updated: 2024/11/25 13:48:06 by aarranz-         ###   ########.fr       */
+/*   Updated: 2024/12/05 12:54:46 by aarranz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ void	dump_info2(t_params *params);
 char 	*take_path(char *str,int nbr);
 void	dump_map(t_params *params);
 void	dump_map2(t_params *params, size_t k);
-/*void	map_walls(t_params *params);
 void	check_char_map(t_params *params);
+/*void	map_walls(t_params *params);
 void	count_lines_len_map(t_params *params);
 void	char_counter(t_params *params);
 void	flood_fill(t_params *params, int y, int x);

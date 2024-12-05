@@ -6,7 +6,7 @@
 /*   By: aarranz- <aarranz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 10:55:57 by aarranz-          #+#    #+#             */
-/*   Updated: 2024/11/25 13:50:06 by aarranz-         ###   ########.fr       */
+/*   Updated: 2024/12/05 12:41:12 by aarranz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	print_info(t_params *params)
 {
 	int i = 0;
 	
-	while(params->raw[i])
+	/*while(params->raw[i])
 	{
 		printf("%s", params->raw[i]);
 		i++;
@@ -29,9 +29,9 @@ void	print_info(t_params *params)
 	printf("\n%s", params->EA);
 	printf("\n%s", params->WE);
 	printf("\n%s", params->F);
-	printf("\n%s", params->C);
+	printf("\n%s", params->C);*/
 	i = 0;
-	while(params->raw[i])
+	while(params->map[i])
 	{
 		printf("%s", params->map[i]);
 		i++;
