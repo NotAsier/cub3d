@@ -6,7 +6,7 @@
 /*   By: aarranz- <aarranz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 12:30:41 by aarranz-          #+#    #+#             */
-/*   Updated: 2024/12/10 14:45:49 by aarranz-         ###   ########.fr       */
+/*   Updated: 2024/12/10 15:50:44 by aarranz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	parse_map(t_params *params)
 	dump_info(params);
 	dump_info2(params);
 	dump_map(params);
-	check_char_map(params);
+	
 	print_info(params);
 	if (is_closed(params))
 		printf("Cerrao\n");

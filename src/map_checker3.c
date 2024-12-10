@@ -6,7 +6,7 @@
 /*   By: aarranz- <aarranz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 13:02:14 by aarranz-          #+#    #+#             */
-/*   Updated: 2024/12/10 15:11:40 by aarranz-         ###   ########.fr       */
+/*   Updated: 2024/12/10 15:38:32 by aarranz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,16 +113,10 @@ void	search_inner_floors(t_params *params, char **map, t_ff_list **positions)
 		c3d_lstadd_back(positions, c3d_lstnew(y - 1, x));
 	if (y < params->map_heigth - 1 && map[y + 1][x] != '1' && map[y + 1][x] != 'X')
 	{
-		printf("at %d %d == [%c]\n", x, y + 1, map[y + 1][x]);
 		c3d_lstadd_back(positions, c3d_lstnew(y + 1, x));
 	}
 	map[y][x] = 'X';
 	*positions = to_check->next;
-	for (size_t i = 0; map[i]; i++)
-	{
-		printf("%s\n", map[i]);
-	}
-	printf("\n\n");
 	free(to_check);
 }
 
