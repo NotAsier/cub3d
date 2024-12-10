@@ -6,7 +6,7 @@
 /*   By: aarranz- <aarranz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 10:55:57 by aarranz-          #+#    #+#             */
-/*   Updated: 2024/12/10 14:46:29 by aarranz-         ###   ########.fr       */
+/*   Updated: 2024/12/10 16:10:38 by aarranz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	dump_map(t_params *params)
 
 	info_line = 0;
 	i = -1;
-	while ((++i >= params->raw_heigth) || (info_line < 6))
+	while (params->raw[++i] && (i >= params->raw_heigth - 1 || info_line < 6))
 	{
 		j = -1;
 		while (params->raw[i][++j] != '\0')
@@ -87,6 +87,7 @@ void	dump_map(t_params *params)
 				info_line++;					
 		}
 	}
+	check_char_map(params, i);
 	longest_line(params, i);
 	dump_map2(params, i);
 }

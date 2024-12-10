@@ -6,7 +6,7 @@
 /*   By: aarranz- <aarranz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 13:12:10 by aarranz-          #+#    #+#             */
-/*   Updated: 2024/12/05 12:51:03 by aarranz-         ###   ########.fr       */
+/*   Updated: 2024/12/10 16:03:14 by aarranz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,30 +52,40 @@ void	cub_check(t_params *params)
 		error("map extension not valid", params);
 }
 
-void	check_char_map(t_params *params)
+void	check_char_map(t_params *params, int k)
 {
 	int	i;
 	int	j;
+	bool	player_found;
 
-	i = 0;
-	while (params->map[i])
+	i = k;
+	player_found = false;
+	while (params->raw[i])
 	{
 		j = 0;
-		while (params->map[i][j])
+		while (params->raw[i][j])
 		{
-			if (params->map[i][j] != '1'
-			&& params->map[i][j] != '0'
-			&& params->map[i][j] != 'N'
-			&& params->map[i][j] != 'W'
-			&& params->map[i][j] != 'S'
-			&& params->map[i][j] != 'E'
-			&& params->map[i][j] != ' '
-			&& params->map[i][j] != '\n')
+			if (params->raw[i][j] != '1'
+			&& params->raw[i][j] != '0'
+			&& (params->raw[i][j] != 'N')
+			&& params->raw[i][j] != 'W'
+			&& params->raw[i][j] != 'S'
+			&& params->raw[i][j] != 'E'
+			&& params->raw[i][j] != ' '
+			&& params->raw[i][j] != '\n')
 				error("characters in map are invalid", params);
+			if (params->raw[i][j] == 'N' || params->raw[i][j] == 'W' || params->raw[i][j] == 'S' || params->raw[i][j] == 'E')
+			{
+				if (player_found == true)
+					error("More than one player in map!", params);
+				player_found = true;
+			}
 			j++;
 		}
 		i++;
 	}
+	if (!player_found)
+		error("Less than one player! Empty map", params);
 }
 
 void	count_lines_len_map(t_params *params)
