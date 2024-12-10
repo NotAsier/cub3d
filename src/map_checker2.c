@@ -6,7 +6,7 @@
 /*   By: aarranz- <aarranz-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 10:55:57 by aarranz-          #+#    #+#             */
-/*   Updated: 2024/12/05 12:41:12 by aarranz-         ###   ########.fr       */
+/*   Updated: 2024/12/10 14:46:29 by aarranz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,12 @@ void	print_info(t_params *params)
 	i = 0;
 	while(params->map[i])
 	{
-		printf("%s", params->map[i]);
+		printf("%s\n", params->map[i]);
 		i++;
 	}
+	printf("%ld\n", params->longest);
+	printf("%d\n", params->map_heigth);
+	
 }
 
 
@@ -84,6 +87,7 @@ void	dump_map(t_params *params)
 				info_line++;					
 		}
 	}
+	longest_line(params, i);
 	dump_map2(params, i);
 }
 
@@ -143,24 +147,18 @@ void	dump_info2(t_params *params)
 		}
 }
 
-void	player_position(t_params *params)
+void	player_position(t_params *params, char *str, int y)
 {
 	size_t	i;
-	size_t	j;
 
 	i = -1;
-	while (params->raw[++i])
+	while (str[++i])
 		{
-			j = -1;
-			while (params->raw[i][++j] != '\0')
+			if (str[i] == 'N' || str[i] == 'S' || str[i] == 'E' || str[i] == 'W')
 			{
-				if (params->raw[i][j] == 'N' || params->raw[i][j] == 'S'
-				 || params->raw[i][j] == 'E' || params->raw[i][j] == 'W')
-				{
-					params->player_x = j;
-					params->player_y = i;
-					params->player_pos = params->raw[i][j];
-				}
+				params->player_x = i;
+				params->player_y = y;
+				params->player_dir = str[i];
 			}
 		}
 }
